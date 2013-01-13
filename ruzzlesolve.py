@@ -51,7 +51,7 @@ def ruzzlesolve(board_str,board_modifiers):
 	def solve(wurd,currentword, x, y):
 		if (x > 3 or x < 0 or y > 3 or y < 0 or board[y][x] in currentword or len(currentword) > MAXLENGTH):
 			return
-		V = currentword+(board[y][x],)
+		V = currentword+[board[y][x],]
 		W = wurd + board[y][x][0]
 		if (len(currentword) >= MINLENGTH):
 			if (W in dictionary):
@@ -99,7 +99,7 @@ def ruzzlesolve(board_str,board_modifiers):
 	for x in range(4):
 		for y in range(4):
 			print "X",
-			solve("",tuple(),x,y)
+			solve("",[],x,y)
 		print ""
 	print "done"
 
